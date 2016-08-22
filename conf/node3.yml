@@ -1,0 +1,15 @@
+dyn_o_mite:
+  datacenter: dc1
+  rack: rack1
+  dyn_listen: 10.130.138.47:8301
+  dyn_seeds:
+  - 10.130.138.47:8101:rack1:dc1:0
+  - 10.130.138.47:8201:rack1:dc1:1431655765
+  data_store: 0
+  listen: 10.130.138.47:8302
+  dyn_seed_provider: simple_provider
+  servers:
+  - 10.130.138.47:6399:1
+  tokens: 2863311530
+  pem_key_file: /apps/dynomite/conf/dynomite.pem
+  
