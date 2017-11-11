@@ -32,7 +32,7 @@ public class BeanConfiguration {
             public Collection<Host> getHosts() {
                 //notice: port will be modified by connection pool configuration(CPConfig)
                 //default value is 8102
-                hosts.add(new Host(host, 8102, Host.Status.Up).setRack("local1"));
+                hosts.add(new Host(host, 8102, Host.Status.Up).setRack("rack1"));
                 return hosts;
             }
         };
@@ -44,7 +44,7 @@ public class BeanConfiguration {
             public List<HostToken> getTokens(Set<Host> activeHosts) {
                 Set<HostToken> allTokens = new HashSet<HostToken>();
                 int i = 0;
-                for (Host host : activeHosts) {
+                for (Host host : activeHosts) {//关联token和host
                     long token  = (4294967295L/3)*i;
                     allTokens.add(new HostToken(token,host));
                     i++;
